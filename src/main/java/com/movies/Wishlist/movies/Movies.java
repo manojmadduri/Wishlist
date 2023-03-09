@@ -1,6 +1,28 @@
 package com.movies.Wishlist.movies;
 
+
+import jakarta.persistence.*;
+
+@Entity
+@Table
 public class Movies {
+
+    public Movies() {
+    }
+
+    @Id
+    @SequenceGenerator(
+            name = "Movies_sequence",
+            sequenceName = "Movies_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "Movies_sequence"
+    )
+
+
+
     private Long id;
     private String name;
     private String director;
